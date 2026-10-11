@@ -2190,3 +2190,36 @@ footer {
     min-height: 1100px;
   }
 }
+
+
+/* Privacy policy page */
+.privacy-policy {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: clamp(22px, 5vw, 44px);
+  border: 1px solid #e0e9e6;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(37, 78, 70, .06);
+  color: #4d5c59;
+  line-height: 1.9;
+}
+
+.privacy-policy > p:first-child { margin-top: 0; }
+.privacy-policy section + section {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #e8efed;
+}
+.privacy-policy h2 {
+  margin: 0 0 12px;
+  color: #315d57;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+.privacy-policy p { margin: 0 0 12px; }
+.privacy-policy ul { margin: 0 0 14px; padding-left: 1.5em; }
+.privacy-policy li { padding-left: .15em; }
+.privacy-policy a { color: #267b67; text-decoration: underline; text-underline-offset: .15em; }
+.privacy-policy a:hover { color: #185c4c; }
+.privacy-policy .privacy-revision { margin: 28px 0 0; color: #687572; text-align: right; font-size: .9rem; }
