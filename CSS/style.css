@@ -1735,7 +1735,7 @@ body {
             rgba(255,255,255,.35) 72%,
             rgba(255,255,255,.12) 100%
         ),
-        url("../images/987654.png");
+        url("../images/optimized/987654.webp");
 
 
     background-size:cover;
@@ -2111,7 +2111,7 @@ body {
                 rgba(255,255,255,.14) 65%,
                 rgba(255,255,255,.22) 100%
             ),
-            url("../images/987654.png");
+            url("../images/optimized/987654.webp");
 
         background-size:cover;
         background-position:center top;

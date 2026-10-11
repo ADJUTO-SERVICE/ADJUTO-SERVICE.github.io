@@ -342,7 +342,7 @@
 .home-page .hero {
   background-image:
     linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.10) 52%, rgba(255,255,255,.18)),
-    url("../images/987654.png");
+    url("../images/optimized/987654.webp");
   background-position: center center;
 }
 
@@ -518,7 +518,7 @@
     padding: 96px 16px 30px;
     background-image:
       linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.04) 54%, rgba(255,255,255,.17)),
-      url("../images/987654.png");
+      url("../images/optimized/987654.webp");
     background-size: cover;
     background-position: center center;
   }
@@ -1377,7 +1377,7 @@ footer {
   .home-page .hero {
     background-image:
       linear-gradient(180deg, rgba(200, 242, 250, .18), rgba(255, 255, 255, .04) 42%, rgba(8, 113, 148, .12)),
-      url("../images/987654.png");
+      url("../images/optimized/987654.webp");
   }
 
   .home-page .hero-catch {
@@ -1860,7 +1860,7 @@ footer {
     box-sizing: border-box;
     background-image:
       linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.08) 55%, rgba(255,255,255,.2)),
-      url("../images/987654.png");
+      url("../images/optimized/987654.webp");
     background-position: center center;
     background-size: cover;
   }
