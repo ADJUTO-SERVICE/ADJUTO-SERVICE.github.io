@@ -2451,3 +2451,18 @@ footer {
   content: '↑';
   background: #e1f1d8;
 }
+
+
+/* Emphasize service area and free estimate near the contact action. */
+.home-page .contact-area {
+  margin-top: 26px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .home-page .contact-area {
+    margin-top: 24px;
+    font-size: 17px;
+  }
+}
