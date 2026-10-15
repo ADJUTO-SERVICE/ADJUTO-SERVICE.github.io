@@ -2466,3 +2466,16 @@ footer {
     font-size: 17px;
   }
 }
+
+
+/* Make the home contact-area message unmistakably readable on phones. */
+body.home-page #contact.contact .contact-box > p.contact-area {
+  font-size: 22px !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 768px) {
+  body.home-page #contact.contact .contact-box > p.contact-area {
+    font-size: 20px !important;
+  }
+}
