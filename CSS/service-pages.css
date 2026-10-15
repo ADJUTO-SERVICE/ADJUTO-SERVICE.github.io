@@ -2408,3 +2408,15 @@ footer {
 .privacy-policy a { color: #267b67; text-decoration: underline; text-underline-offset: .15em; }
 .privacy-policy a:hover { color: #185c4c; }
 .privacy-policy .privacy-revision { margin: 28px 0 0; color: #687572; text-align: right; font-size: .9rem; }
+
+
+/* Tighten the service-to-price transition on small screens. */
+@media (max-width: 768px) {
+  body.home-page #service.service {
+    padding-bottom: 12px !important;
+  }
+
+  body.home-page #price.price {
+    padding-top: 12px !important;
+  }
+}
