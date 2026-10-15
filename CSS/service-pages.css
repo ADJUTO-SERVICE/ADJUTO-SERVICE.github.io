@@ -976,6 +976,7 @@
 .home-page .contact-form-cta {
   background: linear-gradient(135deg, #298eaa, #176d88);
   color: #fff;
+  white-space: nowrap;
 }
 
 .home-page .contact-cta:hover {
@@ -1003,6 +1004,12 @@
 
   .home-page .contact-buttons .contact-phone-number {
     font-size: 13px;
+  }
+
+  .home-page .contact-buttons .contact-form-cta {
+    padding-inline: 4px;
+    font-size: 12px;
+    letter-spacing: -.035em;
   }
 
   .home-page .gallery {
