@@ -930,6 +930,41 @@
 }
 
 /* Bring the FAQ closer to the work examples. */
+.home-page .service-section-title {
+  max-width: 880px;
+  margin: 0 auto 54px;
+}
+
+.home-page .service-intro {
+  max-width: 800px;
+  margin: 18px auto 0;
+  padding: 0 18px;
+}
+
+.home-page .service-intro-lead {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 8px 20px;
+  border: 1px solid rgba(41, 142, 170, .2);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f1fbfa, #eef8fb);
+  color: #287e8b;
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.home-page .service-intro-detail {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #68777c;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.9;
+  letter-spacing: .015em;
+  text-wrap: pretty;
+}
+
 .home-page .gallery {
   padding-bottom: 44px;
 }
@@ -984,6 +1019,26 @@
 }
 
 @media (max-width: 768px) {
+  .home-page .service-section-title {
+    margin-bottom: 38px;
+  }
+
+  .home-page .service-intro {
+    margin-top: 14px;
+    padding: 0 4px;
+  }
+
+  .home-page .service-intro-lead {
+    margin-bottom: 7px;
+    padding: 7px 13px;
+    font-size: 14px;
+  }
+
+  .home-page .service-intro-detail {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
   .home-page .header-phone-label {
     font-size: 9.5px;
   }
