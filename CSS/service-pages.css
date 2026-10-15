@@ -1019,6 +1019,10 @@
 }
 
 @media (max-width: 768px) {
+  .home-page .service {
+    padding-bottom: 38px;
+  }
+
   .home-page .service-section-title {
     margin-bottom: 38px;
   }
