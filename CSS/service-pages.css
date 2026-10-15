@@ -2453,29 +2453,28 @@ footer {
 }
 
 
-/* Emphasize service area and free estimate near the contact action. */
-.home-page .contact-area {
-  margin-top: 26px;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-  .home-page .contact-area {
-    margin-top: 24px;
-    font-size: 17px;
-  }
-}
-
-
-/* Make the home contact-area message unmistakably readable on phones. */
+/* Compact, balanced label for service area and free estimate. */
 body.home-page #contact.contact .contact-box > p.contact-area {
-  font-size: 22px !important;
-  line-height: 1.5 !important;
+  display: table;
+  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 18px auto 20px !important;
+  padding: 8px 16px;
+  border: 1px solid #d6e8d0;
+  border-radius: 999px;
+  background: #f3f9ef;
+  color: #477b3d;
+  font-size: 15px !important;
+  font-weight: 800;
+  line-height: 1.4 !important;
+  letter-spacing: .02em;
 }
 
 @media (max-width: 768px) {
   body.home-page #contact.contact .contact-box > p.contact-area {
-    font-size: 20px !important;
+    margin: 16px auto 18px !important;
+    padding: 8px 13px;
+    font-size: 15px !important;
   }
 }
