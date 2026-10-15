@@ -2420,3 +2420,34 @@ footer {
     padding-top: 12px !important;
   }
 }
+
+
+/* Make each FAQ card visibly tappable. */
+.home-page .faq-question {
+  position: relative;
+  padding-bottom: 48px;
+  padding-right: 58px;
+}
+
+.home-page .faq-question::after {
+  content: '↴';
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #eef8e9;
+  color: #68b846;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+.home-page .faq-item.active .faq-question::after {
+  content: '↑';
+  background: #e1f1d8;
+}
