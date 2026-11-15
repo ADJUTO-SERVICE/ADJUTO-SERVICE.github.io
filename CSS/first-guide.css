@@ -1,0 +1,190 @@
+.guide {
+  --guide-ink: #303a38;
+  --guide-accent: #21777a;
+  --guide-rule: #dce9e5;
+  color: var(--guide-ink);
+  background: #fff;
+}
+
+.guide .guide-hero {
+  padding: clamp(52px, 8vw, 100px) 0;
+  text-align: center;
+  background: url("../images/botanical-sprig.svg") left -26px bottom -58px / clamp(120px, 19vw, 240px) auto no-repeat,
+    linear-gradient(108deg, #e9f6ed, #fff 47%, #e9f5f7);
+}
+
+.guide h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.35;
+  letter-spacing: .035em;
+}
+
+.guide h1::after,
+.guide-notices h2::after {
+  display: block;
+  width: 58px;
+  height: 3px;
+  margin: 15px auto;
+  background: #55aeae;
+  content: "";
+}
+
+.guide-hero p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.guide-content {
+  padding-bottom: clamp(48px, 7vw, 88px);
+}
+
+.guide-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 18px 0 24px;
+  font-size: .875rem;
+}
+
+.guide-breadcrumb a {
+  color: var(--guide-accent);
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+
+.guide-intro,
+.guide .guide-contact {
+  padding: clamp(21px, 4vw, 42px);
+  border-radius: 16px;
+  background: linear-gradient(110deg, #edf8fa, #f3f8ee);
+}
+
+.guide h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.5;
+}
+
+.guide p {
+  line-height: 1.8;
+}
+
+.guide-intro p + p,
+.guide-notice-copy p + p {
+  margin-top: .4em;
+}
+
+.guide .guide-notices {
+  padding: clamp(32px, 5vw, 56px) 0;
+  background: transparent;
+}
+
+.guide-notices h2::after {
+  margin: 12px 0 18px;
+}
+
+.guide-notices ul {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--guide-rule);
+  list-style: none;
+}
+
+.guide-notice {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.75fr);
+  align-items: center;
+  gap: 20px;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--guide-rule);
+}
+
+.guide-notice-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.guide-notice h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.guide-icon {
+  display: grid;
+  flex: 0 0 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 11px;
+  color: #305f61;
+  background: #eaf5ee;
+}
+
+.guide-notice:nth-child(even) .guide-icon {
+  background: #eaf5f8;
+}
+
+.guide-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.guide-notice-copy {
+  padding-left: 20px;
+  border-left: 1px solid var(--guide-rule);
+}
+
+.guide-notice-copy p {
+  margin: 0;
+}
+
+.guide .guide-contact {
+  text-align: center;
+  background: url("../images/botanical-sprig.svg") right -12px bottom -66px / 128px auto no-repeat,
+    linear-gradient(110deg, #edf8fa, #f3f8ee);
+}
+
+.guide-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.guide-actions .btn {
+  min-height: 48px;
+  border-radius: 12px;
+}
+
+.guide-actions .line-cta {
+  background: #24753d;
+}
+
+.guide-actions .estimate-cta {
+  background: var(--guide-accent);
+}
+
+@media (max-width: 680px) {
+  .guide-notice {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 9px;
+  }
+
+  .guide-notice-copy {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .guide-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
