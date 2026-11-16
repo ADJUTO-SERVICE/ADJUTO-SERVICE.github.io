@@ -26,7 +26,7 @@ jobs:
         if: contains(github.event.head_commit.message, '[verify-release-page]')
         run: |
           curl -fsS --retry 4 --retry-all-errors --retry-delay 3 --max-time 15 https://adjuto-service.github.io/seo-release-test.html -o "$RUNNER_TEMP/seo-release-test.html"
-          rg --fixed-strings 'SEOシステムの公開テスト' "$RUNNER_TEMP/seo-release-test.html"
-          rg --fixed-strings 'name="robots" content="noindex,nofollow"' "$RUNNER_TEMP/seo-release-test.html"
+          grep -F 'SEOシステムの公開テスト' "$RUNNER_TEMP/seo-release-test.html"
+          grep -F 'name="robots" content="noindex,nofollow"' "$RUNNER_TEMP/seo-release-test.html"
           curl -fsS --max-time 15 https://adjuto-service.github.io/ -o "$RUNNER_TEMP/seo-root.html"
-          rg -q --fixed-strings 'ADJUTO SERVICE' "$RUNNER_TEMP/seo-root.html"
+          grep -Fq 'ADJUTO SERVICE' "$RUNNER_TEMP/seo-root.html"
