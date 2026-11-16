@@ -132,7 +132,7 @@ export function renderPreview(result) {
     + '\n<p><a href="' + site + '/contact.html#contact-form">無料見積り・お問い合わせ</a></p></main></body></html>\n';
 }
 
-function gemini(model, key) {
+export function gemini(model, key) {
   if (!/^[a-z0-9.-]+$/.test(model ?? '') || !key) throw new Error('GEMINI_MODEL と GEMINI_API_KEY を設定してください');
   return async (instruction, data, schema) => {
     const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent', {
