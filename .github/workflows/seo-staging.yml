@@ -30,3 +30,13 @@ jobs:
           grep -F 'name="robots" content="noindex,nofollow"' "$RUNNER_TEMP/seo-release-test.html"
           curl -fsS --max-time 15 https://adjuto-service.github.io/ -o "$RUNNER_TEMP/seo-root.html"
           grep -Fq 'ADJUTO SERVICE' "$RUNNER_TEMP/seo-root.html"
+      - name: Check Gemini credential availability
+        if: contains(github.event.head_commit.message, '[gemini-check]')
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "GEMINI_API_KEY is missing from this workflow environment."
+            exit 1
+          fi
+          echo "Gemini credential is configured."
