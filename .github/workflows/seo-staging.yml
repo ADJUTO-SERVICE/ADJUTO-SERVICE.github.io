@@ -30,13 +30,30 @@ jobs:
           grep -F 'name="robots" content="noindex,nofollow"' "$RUNNER_TEMP/seo-release-test.html"
           curl -fsS --max-time 15 https://adjuto-service.github.io/ -o "$RUNNER_TEMP/seo-root.html"
           grep -Fq 'ADJUTO SERVICE' "$RUNNER_TEMP/seo-root.html"
-      - name: Check Gemini credential availability
-        if: contains(github.event.head_commit.message, '[gemini-check]')
+      - name: Read the current published sources
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: main
+          path: production-site
+          persist-credentials: false
+      - name: Check first article sources against main
+        run: node seo/first-article.mjs production-site "$RUNNER_TEMP/approved-article" --check-input
+      - name: Generate and independently review the first article
+        if: contains(github.event.head_commit.message, '[first-article]')
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
         run: |
           if [ -z "$GEMINI_API_KEY" ]; then
-            echo "GEMINI_API_KEY is missing from this workflow environment."
+            echo "::error::GitHub Secrets に GEMINI_API_KEY を登録してください。"
             exit 1
           fi
-          echo "Gemini credential is configured."
+          SITE_COMMIT="$(git -C production-site rev-parse HEAD)" node seo/first-article.mjs production-site "$RUNNER_TEMP/approved-article"
+      - name: Save approved article and review
+        if: success() && contains(github.event.head_commit.message, '[first-article]')
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: approved-first-article
+          path: ${{ runner.temp }}/approved-article
+          if-no-files-found: error
+          retention-days: 3

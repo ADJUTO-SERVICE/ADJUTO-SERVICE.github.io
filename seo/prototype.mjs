@@ -112,7 +112,15 @@ function escapeHtml(value) {
 }
 
 export function renderPreview(result) {
+  return renderArticle(result);
+}
+
+export function renderArticle(result, { preview = true } = {}) {
   if (result.status !== '合格') throw new Error('合格した記事のみHTMLに出力できます');
+  if (!/^\/articles\/[a-z0-9][a-z0-9-]{0,79}\/$/.test(result.path)) throw new Error('記事URLを確認してください');
+  const head = preview ? '<meta name="robots" content="noindex,nofollow">'
+    : '<link rel="canonical" href="' + site + result.path + '">';
+  const brand = preview ? 'ADJUTO SERVICE｜公開前試作' : '<a href="/">ADJUTO SERVICE</a>';
   const { article, sources } = result;
   const byId = new Map(sources.map(item => [item.id, item.url]));
   const sections = article.sections.map(item => {
@@ -122,12 +130,12 @@ export function renderPreview(result) {
       + escapeHtml(item.body).replace(/\r?\n/g, '<br>') + '</p><p>' + references + '</p></section>';
   }).join('\n');
   return '<!doctype html>\n<html lang="ja"><head><meta charset="utf-8">'
-    + '<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">'
+    + '<meta name="viewport" content="width=device-width, initial-scale=1">' + head
     + '<title>' + escapeHtml(article.title) + '｜ADJUTO SERVICE</title>'
     + '<meta name="description" content="' + escapeHtml(article.description) + '">'
     + '<style>body{font-family:system-ui,sans-serif;color:#242424;line-height:1.8;margin:0}'
     + 'main{max-width:44rem;margin:auto;padding:1.5rem}section{margin-block:2rem}a{color:#075962}h1,h2{line-height:1.4}</style>'
-    + '</head><body><main><p>ADJUTO SERVICE｜公開前試作</p><h1>' + escapeHtml(article.title)
+    + '</head><body><main><p>' + brand + '</p><h1>' + escapeHtml(article.title)
     + '</h1><p>' + escapeHtml(article.description) + '</p>\n' + sections
     + '\n<p><a href="' + site + '/contact.html#contact-form">無料見積り・お問い合わせ</a></p></main></body></html>\n';
 }

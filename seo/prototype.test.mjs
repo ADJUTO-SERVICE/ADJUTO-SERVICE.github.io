@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { isPublicationDay, runPrototype, renderPreview } from './prototype.mjs';
+import { isPublicationDay, runPrototype, renderArticle, renderPreview } from './prototype.mjs';
 
 const today = '2026-11-17';
 const topic = { slug: 'remote-estate-guide', question: '遠方から依頼するときの準備は？', service: '遺品整理・生前整理' };
@@ -37,6 +37,11 @@ assert.match(renderPreview(result), /&lt;script&gt;test/);
 assert.match(renderPreview(result), /noindex,nofollow/);
 assert.match(renderPreview(result), /contact\.html#contact-form/);
 assert.throws(() => renderPreview({ status: '保留' }));
+const releaseHtml = renderArticle(result, { preview: false });
+assert.ok(releaseHtml.includes('rel="canonical" href="https://adjuto-service.github.io' + result.path + '"'));
+assert.doesNotMatch(releaseHtml, /noindex|公開前試作/);
+assert.match(releaseHtml, /&lt;script&gt;test/);
+assert.throws(() => renderArticle({ ...result, path: '/contact.html' }, { preview: false }));
 
 assert.equal((await runPrototype({ ...input, sources: [{ ...source, expiresOn: '2026-11-16' }] }, blocked, today)).status, '保留');
 assert.equal((await runPrototype({ ...input, existing: [{ ...input.existing[0], path: result.path + 'index.html' }] }, blocked, today)).status, '不採用');

@@ -1,0 +1,57 @@
+{
+  "topic": {
+    "slug": "enpo-ihinseiri-junbi",
+    "question": "遠方の実家へ何度も行けない家族が、残す品・探してほしい物、鍵と作業後の確認方法を最初の相談でどう伝えればよいか。依頼者が自分用に書き換えられる短い相談文例も示す。",
+    "service": "遺品整理・生前整理"
+  },
+  "references": [
+    {
+      "id": "remote",
+      "path": "/",
+      "anchor": "#faq",
+      "quote": "お写真やお電話などで状況を確認しながら、進め方をご相談いたします。"
+    },
+    {
+      "id": "search",
+      "path": "/",
+      "anchor": "#faq",
+      "quote": "はいお探しすること可能です。 その他にも、金銭・貴重品・土地に関する書類や金銭に代わるものも見つけ次第ご報告いたします。"
+    },
+    {
+      "id": "keep",
+      "path": "/",
+      "anchor": "#faq",
+      "quote": "必要なもの・残すものを確認しながら、 その後の暮らしや次の用途につながるよう、丁寧に整理します。"
+    },
+    {
+      "id": "key-mail",
+      "path": "/",
+      "anchor": "#faq",
+      "quote": "追跡番号付きの郵便物にて鍵をお預かりすることができます。 作業後の鍵の返送についても、郵送で対応可能です。"
+    },
+    {
+      "id": "photo-report",
+      "path": "/",
+      "anchor": "#flow",
+      "quote": "立ち会い不要の場合は写真でご報告いたします。"
+    },
+    {
+      "id": "estimate",
+      "path": "/",
+      "anchor": "#flow",
+      "quote": "現地またはお写真をもとに無料でお見積りいたします。"
+    },
+    {
+      "id": "scope",
+      "path": "/first-guide.html",
+      "anchor": "#guide-notices-title",
+      "quote": "作業開始前に、ご依頼内容と作業範囲を確認いたします。"
+    },
+    {
+      "id": "utilities",
+      "path": "/first-guide.html",
+      "anchor": "#guide-notices-title",
+      "quote": "作業に必要な電気・上下水道をお借りする場合がございます。"
+    }
+  ]
+}
